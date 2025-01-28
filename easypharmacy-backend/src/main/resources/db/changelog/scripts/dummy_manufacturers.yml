@@ -1,0 +1,317 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: ArtiFixal
+      changes:
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Mystic Realms'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Ethereal Echoes'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Celestial Wonders'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Arcane Archives'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Radiant Horizons'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Infinite Nexus'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Crimson Spires'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Velvet Shadows'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Aurora Cascade'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Obsidian Depths'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Golden Sanctum'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Starlit Veil'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Enchanted Grove'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Luminous Tide'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Silver Halls'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Verdant Haven'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Eclipse Forge'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Chimeric Abyss'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Prismatic Isles'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Shadowed Glade'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Twilight Ascent'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Frosted Summit'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Phoenix Hearth'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Azure Expanse'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Emerald Haven'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Scarlet Canopy'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Golden Aegis'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Shimmering Depths'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Celestial Bloom'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Nocturnal Reverie'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Glacial Mirror'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Radiant Citadel'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Eternal Oasis'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Crystalline Cliffs'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Duskward Isle'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Gilded Pinnacle'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Astral Shore'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Mystic Hollow'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Auric Summit'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Sapphire Sanctum'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Opal Glade'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Velvet Ascent'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Obsidian Ridge'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Celestial Hollow'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Twilight Cascade'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Radiant Abyss'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Amber Sanctuary'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Azure Horizon'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Prismatica'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Ebon Spire'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Lunar Grove'
+        - insert:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: name
+                  value: 'Infinite Radiance'

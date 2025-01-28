@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 9
+      author: ArtiFixal
+      changes:
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: first_name
+                  value: 'Joe'
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: name
+                  value: 'Tablet'

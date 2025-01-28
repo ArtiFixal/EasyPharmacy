@@ -1,0 +1,47 @@
+# IDEs and editors
+**.idea/
+**.project
+**.classpath
+**.c9/
+**.launch
+**.settings/
+**.sublime-workspace
+**nbactions.xml
+
+# Backend
+easypharmacy-backend/target/**
+easypharmacy-backend/.mvn
+
+# Frontend
+## Compiled output
+easypharmacy-frontend/dist
+easypharmacy-frontend/tmp
+easypharmacy-frontend/out-tsc
+easypharmacy-frontend/bazel-out
+
+## Node
+easypharmacy-frontend/node_modules
+easypharmacy-frontend/npm-debug.log
+easypharmacy-frontend/yarn-error.log
+
+## Visual Studio Code
+.vscode/**
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+## Miscellaneous
+easypharmacy-frontend/.angular/cache
+easypharmacy-frontend/.sass-cache/
+easypharmacy-frontend/connect.lock
+easypharmacy-frontend/coverage
+easypharmacy-frontend/libpeerconnection.log
+easypharmacy-frontend/testem.log
+easypharmacy-frontend/typings
+
+# System files
+**.DS_Store
+**Thumbs.db
+/easypharmacy-backend/target/

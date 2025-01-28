@@ -1,0 +1,293 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: ArtiFixal
+      changes:
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Pill'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Capsule'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Syrup'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Injection'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Inhaler'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Cream'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Ointment'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Gel'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Patch'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Drops'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Suppository'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Powder'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Spray'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Lozenge'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Solution'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Suspension'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Emulsion'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Granules'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Foam'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Lotion'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Shampoo'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Mouthwash'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Paste'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Pellet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Nebulizer Solution'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Transdermal Gel'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Buccal Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Sublingual Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Chewable Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Oral Dissolving Film'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Oral Dissolving Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Medicated Strip'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Dental Gel'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Intravenous Infusion'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Intramuscular Injection'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Subcutaneous Injection'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Intranasal Spray'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Ophthalmic Solution'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Ear Drops'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Rectal Foam'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Vaginal Tablet'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Vaginal Cream'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Vaginal Gel'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Nasal Gel'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Oral Suspension'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Reconstitutable Powder'
+        - insert:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: name
+                  value: 'Topical Solution'

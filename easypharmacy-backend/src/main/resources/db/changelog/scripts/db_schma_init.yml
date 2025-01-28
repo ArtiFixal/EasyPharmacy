@@ -1,0 +1,281 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: ArtiFixal
+      changes:
+        # Manufacturer
+        - createTable:
+            tableName: manufacturers
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+
+        # Category
+        - createTable:
+            tableName: categories
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+
+        # MedicineForm
+        - createTable:
+            tableName: medicine_forms
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+
+        # Image
+        - createTable:
+            tableName: images
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: path
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+
+        # Medicine
+        - createTable:
+            tableName: medicines
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(120)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: manufacturer_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: form_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_id
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: price
+                  type: decimal(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: prescription_required
+                  type: bool
+                  constraints:
+                    nullable: false
+
+        # Adresses
+        - createTable:
+            tableName: addresses
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: street
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: postalCode
+                  type: char(5)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+
+        # Carts
+        - createTable:
+            tableName: carts
+            columns:
+              - column:
+                  name: sale_id
+                  type: int
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: medicine_id
+                  type: int
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: int
+                  constraints:
+                    nullable: false
+
+        # Sale
+        - createTable:
+            tableName: sales
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: purchased
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: finalised
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+        # Employee
+        - createTable:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: bool
+                  constraints:
+                    nullable: false
+
+        # Client
+        - createTable:
+            tableName: clients
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(80)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: bool
+                  constraints:
+                    nullable: false

@@ -1,0 +1,41 @@
+databaseChangeLog:
+- changeSet:
+    id: 3
+    author: ArtiFixal
+    changes:
+    - insert:
+        tableName: statuses
+        columns:
+        - column:
+            name: id
+            value: 1
+        - column:
+            name: name
+            value: status.placed
+    - insert:
+        tableName: statuses
+        columns:
+        - column:
+            name: id
+            value: 2
+        - column:
+            name: name
+            value: status.processed
+    - insert:
+        tableName: statuses
+        columns:
+        - column:
+            name: id
+            value: 3
+        - column:
+            name: name
+            value: status.toPickUp
+    - insert:
+        tableName: statuses
+        columns:
+        - column:
+            name: id
+            value: 4
+        - column:
+            name: name
+            value: status.finished

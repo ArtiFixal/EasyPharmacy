@@ -1,0 +1,305 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: ArtiFixal
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Analgesics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antibiotics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antidepressants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antihistamines'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antiseptics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Bronchodilators'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Cardiovascular'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Cough suppressants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Decongestants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Diuretics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Expectorants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Hormones'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Immunosuppressants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Laxatives'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Muscle relaxants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'NSAIDs'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Sedatives'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Statins'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Vaccines'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Vitamins'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antacids'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antifungals'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antivirals'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antimalarials'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Corticosteroids'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antipyretics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antispasmodics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Anti-inflammatory'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antiemetics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antiparasitics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Anticonvulsants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antineoplastics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antithrombotics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Anticoagulants'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antiplatelets'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Ophthalmic solutions'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Topical steroids'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antigout agents'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Proton pump inhibitors'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'H2 blockers'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Anticholinergics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antimigraine agents'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antidiarrheals'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Hemostatics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antipsychotics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antidiabetics'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antiglaucoma agents'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antitubercular agents'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Enzyme replacements'
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: name
+                  value: 'Antifibrotics'

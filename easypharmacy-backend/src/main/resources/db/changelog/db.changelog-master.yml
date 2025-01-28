@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/scripts/db_schma_init.yml
+  - include:
+      file: db/changelog/scripts/status_init.yml
+  - include:
+      file: db/changelog/scripts/status_insert.yml
+  - include:
+      file: db/changelog/scripts/table_relations.yml
+  - include:
+      file: db/changelog/scripts/dummy_manufacturers.yml
+  - include:
+      file: db/changelog/scripts/dummy_categories.yml
+  - include:
+      file: db/changelog/scripts/dummy_forms.yml
+  - include:
+      file: db/changelog/scripts/dummy_medicines.yml
