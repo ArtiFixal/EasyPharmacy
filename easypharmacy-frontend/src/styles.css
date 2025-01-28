@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    color: #FFF;
+}
+button{
+    background: rgb(40, 35, 35);
+}
+body{
+    background: #1e1e1e;
+}
+img{
+    height: 200px;
+}
+a{
+    margin: 0 5px;
+}
+input{
+    color: #000;
+}
+input[type=file]{
+    color: #FFF;
+}
+select{
+    color: #000;
+}

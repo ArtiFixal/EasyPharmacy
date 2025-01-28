@@ -1,0 +1,24 @@
+<form [formGroup]="registerForm">
+    <div>
+        <div i18n="|First name label@personal.firstName">First name</div>
+        <input type="text" formControlName="firstName">
+    </div>
+    <div>
+        <div i18n="|Last name label@personal.firstName">Last name</div>
+        <input type="text" formControlName="lastName">
+    </div>
+    <div>
+        <div i18n="|Email label@personal.email">Email</div>
+        <input type="email" formControlName="email">
+    </div>
+    <div>
+        <div i18n="|Password label@personal.password">Password</div>
+        <input type="password" formControlName="password">
+    </div>
+    <div>
+        <div i18n="|Password confirm label@personal.passwordConfirm">Confirm password</div>
+        <input type="password" formControlName="confirmPassword">
+    </div>
+    <button type="submit" i18n="|Register button@register.form.submit">Register</button>
+    <a routerLink="/" i18n="|Cancel button@form.cancel">Cancel</a>
+</form>
