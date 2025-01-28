@@ -16,6 +16,6 @@ export class ClientLoginComponent {
 
   login(loginData:LoginDTO){
     console.log(loginData);
-    this.authService.sendLoginRequest(loginData,`/client/login`);
+    this.authService.sendLoginRequest(loginData,`/v1/client/login`);
   }
 }
