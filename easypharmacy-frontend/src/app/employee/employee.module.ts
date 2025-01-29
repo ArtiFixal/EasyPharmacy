@@ -8,6 +8,10 @@ import { ManufacturerEditComponent } from './manufacturer/manufacturer-edit/manu
 import { ManufacturerDetailsComponent } from './manufacturer/manufacturer-details/manufacturer-details.component';
 import { EmployeeComponent } from './employee.component';
 import { enviroment } from '../enviroment';
+import { CategoryFormComponent } from './category/category-form/category-form.component';
+import { ListCategoryComponent } from './category/list-category/list-category.component';
+import { AddCategoryComponent } from './category/add-category/add-category.component';
+import { DetailsCategoryComponent } from './category/details-category/details-category.component';
 
 export const employeeRoutes: Routes = [
   // Manufacturer
@@ -17,6 +21,12 @@ export const employeeRoutes: Routes = [
   {path:"employee/manufacturer/add", component:ManufacturerAddComponent,title:`${enviroment.title} - add manufacturer`},
   {path:"employee/manufacturer/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit manufacturer`},
   {path:"employee/manufacturer/details/:id", component:ManufacturerDetailsComponent,title:`${enviroment.title} - manufacturer info`},
+  // Category
+  {path:"employee/category", component:ListCategoryComponent,title:`${enviroment.title} - categories list`},
+  {path:"employee/category/:page", component:ListCategoryComponent,title:`${enviroment.title} - categories list`},
+  {path:"employee/category/add", component:AddCategoryComponent,title:`${enviroment.title} - add category`},
+  {path:"employee/category/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit category`},
+  {path:"employee/category/details/:id", component:DetailsCategoryComponent,title:`${enviroment.title} - category info`},
 ]
 
 @NgModule({
@@ -24,6 +34,7 @@ export const employeeRoutes: Routes = [
     CommonModule,
     RouterModule,
     ManufacturerFormComponent,
+    CategoryFormComponent,
 ],
   providers:[
     [provideRouter(employeeRoutes,withComponentInputBinding())]
@@ -34,6 +45,9 @@ export const employeeRoutes: Routes = [
     ManufacturerAddComponent,
     ManufacturerEditComponent,
     ManufacturerDetailsComponent,
+    ListCategoryComponent,
+    AddCategoryComponent,
+    DetailsCategoryComponent,
   ],
   exports:[
     EmployeeComponent,
@@ -41,6 +55,9 @@ export const employeeRoutes: Routes = [
     ManufacturerAddComponent,
     ManufacturerEditComponent,
     ManufacturerDetailsComponent,
+    ListCategoryComponent,
+    AddCategoryComponent,
+    DetailsCategoryComponent,
   ]
 })
 export class EmployeeModule { }
