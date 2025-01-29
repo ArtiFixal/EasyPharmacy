@@ -1,0 +1,36 @@
+<form [formGroup]="medicineForm" (ngSubmit)="submitCallback()">
+    @if (model) {
+        <div i18n="@@table.id">ID:</div>
+        <input type="text" formControlName="id">
+    }
+    <div i18n="@@table.name">Name:</div>
+    <input type="text" formControlName="name">
+    <div i18n="@@table.image">Image:</div>
+    <div></div>
+    <input type="file" formControlName="image">
+    <div i18n="@@table.image">Manufacturer:</div>
+    <select-form [control]="manufacturerControl" [options]="manufacturers"></select-form>
+    <div i18n="@@table.image">Category:</div>
+    <select-form [control]="categoryControl" [options]="categories"></select-form>
+    <div i18n="@@table.image">Form:</div>
+    <select-form [control]="medicineFormControl" [options]="medicineForms"></select-form>
+    <div i18n="@@table.image">Price:</div>
+    <input type="text" formControlName="price">
+    <div i18n="|Column name containing if prescription is required@@medicine.prescriptionRequired">Prescription required:</div>
+    <div>
+        <label for="prescriptionYes" i18n="|Boolean yes text@@bool.yes">
+            <input type="radio" name="prescriptionRequired" formControlName="prescriptionRequired" value="true" id="prescriptionYes">
+            Yes
+        </label>
+        <label for="prescriptionNo" i18n="|Boolean no text@@bool.no">
+            <input type="radio" name="prescriptionRequired" formControlName="prescriptionRequired" value="false" id="prescriptionNo">
+            No
+        </label>
+    </div>
+    @if(model){
+        <button type="submit" i18n="|Button updating entity@@form.edit">Edit</button>
+    }@else {
+        <button type="submit" i18n="|Button adding new entity@@form.add">Add</button>
+    }
+    <a routerLink="/employee/medicine" i18n="|Cancel form action ex. edit@@form.cancel">Cancel</a>
+</form>

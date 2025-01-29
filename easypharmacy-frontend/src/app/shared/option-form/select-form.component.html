@@ -1,0 +1,5 @@
+<select [formControl]="control">
+    @for (el of options; track $index) {
+        <option value="{{el.id}}">{{el.text}}</option>
+    }
+</select>

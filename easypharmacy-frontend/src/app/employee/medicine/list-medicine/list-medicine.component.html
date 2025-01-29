@@ -1,0 +1,46 @@
+<table>
+    <thead>
+        <td i18n="|Object ID column name@@table.id">ID</td>
+        <td i18n="|Column containing images@@table.image">Image</td>
+        <td i18n="|Column containing column name@@table.name">Name</td>
+        <td i18n="|Column containing manufacturer names@@manufacturer.name">Manufacturer</td>
+        <td i18n="|Column containing category names@@category.name">Category</td>
+        <td i18n="|Column containing medicine forms@@medicineForm.name">Form</td>
+        <td i18n="|Column containing prices@@table.price">Price</td>
+        <td i18n="|Column containing information if medicine requires receipt@@medicine.prescriptionRequired">Prescription required</td>
+        <td i18n="|Column containing available options@@table.options">Options</td>
+    </thead>
+    <tbody>
+        @for (el of listData; track $index) {
+            <tr>
+                <td>{{el.id}}</td>
+                <td>
+                    <img src="{{el.image| defaultImage}}" alt="medicine image">
+                </td>
+                <td>{{el.name}}</td>
+                <td>{{el.manufacturerID}}</td>
+                <td>{{el.categoryID}}</td>
+                <td>{{el.price}}</td>
+                <td>{{el.prescriptionRequired| yesNo}}</td>
+                <td>
+                    <a routerLink="/employee/medicine/edit/{{el.id}}" i18n="|Button to entity edit form@@form.edit">Edit</a>
+                </td>
+            </tr>
+        } @empty {
+            <td i18n="|Empty category list@@category.table.empty">There is no medicines</td>
+        }
+    </tbody>
+</table>
+<div>
+    <button (click)="previousPage()" [disabled]="currentPage===0">Previous</button>
+    <span i18n="|Single product page name@@table.page">Page</span>
+    <span>{{currentPage}}</span>
+    <span i18n="|Single page out of X number@@table.of">of</span>
+    <span>{{maxPage}}</span>
+    <button i18n="|Next page button@@button.next" (click)="nextPage()">Next</button>
+</div>
+<a routerLink="/employee/medicine/add" i18n="|Button to entity creation form@@form.add">Add new</a>
+<a routerLink="/employee" i18n="|Button to previous page@@button.back">Back</a>
+<div [hidden]="displayInfoPopup">
+    <div>{{popupText}}</div>
+</div>
