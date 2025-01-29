@@ -12,6 +12,10 @@ import { CategoryFormComponent } from './category/category-form/category-form.co
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { DetailsCategoryComponent } from './category/details-category/details-category.component';
+import { ListMedicineFormComponent } from './medicineForm/list-medicine-form/list-medicine-form.component';
+import { AddMedicineFormComponent } from './medicineForm/add-medicine-form/add-medicine-form.component';
+import { DetailsMedicineFormComponent } from './medicineForm/details-medicine-form/details-medicine-form.component';
+import { MedicineFormFormComponent } from './medicineForm/medicine-form-form/medicine-form-form.component';
 
 export const employeeRoutes: Routes = [
   // Manufacturer
@@ -27,6 +31,11 @@ export const employeeRoutes: Routes = [
   {path:"employee/category/add", component:AddCategoryComponent,title:`${enviroment.title} - add category`},
   {path:"employee/category/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit category`},
   {path:"employee/category/details/:id", component:DetailsCategoryComponent,title:`${enviroment.title} - category info`},
+  // MedicineForm
+  {path:"employee/medicineForm", component:ListMedicineFormComponent,title:`${enviroment.title} - medicine form list`},
+  {path:"employee/medicineForm/add", component:AddMedicineFormComponent,title:`${enviroment.title} - add medicine form`},
+  {path:"employee/medicineForm/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit medicine form`},
+  {path:"employee/medicineForm/details/:id", component:DetailsMedicineFormComponent,title:`${enviroment.title} - medicine form info`},
 ]
 
 @NgModule({
@@ -35,6 +44,7 @@ export const employeeRoutes: Routes = [
     RouterModule,
     ManufacturerFormComponent,
     CategoryFormComponent,
+    MedicineFormFormComponent,
 ],
   providers:[
     [provideRouter(employeeRoutes,withComponentInputBinding())]
@@ -48,6 +58,10 @@ export const employeeRoutes: Routes = [
     ListCategoryComponent,
     AddCategoryComponent,
     DetailsCategoryComponent,
+    ListMedicineFormComponent,
+    AddMedicineFormComponent,
+    DetailsMedicineFormComponent,
+
   ],
   exports:[
     EmployeeComponent,
@@ -58,6 +72,9 @@ export const employeeRoutes: Routes = [
     ListCategoryComponent,
     AddCategoryComponent,
     DetailsCategoryComponent,
+    ListMedicineFormComponent,
+    AddMedicineFormComponent,
+    DetailsMedicineFormComponent,
   ]
 })
 export class EmployeeModule { }
