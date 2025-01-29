@@ -1,0 +1,33 @@
+<table>
+    <thead>
+        <td i18n="|Object ID column name@@table.id">ID</td>
+        <td i18n="|Column containing column name@@table.name">Name</td>
+        <td i18n="|Column containing available options@@table.options">Options</td>
+    </thead>
+    <tbody>
+        @for (man of listData; track $index) {
+            <tr>
+                <td>{{man.id}}</td>
+                <td>{{man.name}}</td>
+                <td>
+                    <a routerLink="/employee/manufacturer/edit/{{man.id}}" i18n="|Button to entity edit form@@form.edit">Edit</a>
+                </td>
+            </tr>
+        } @empty {
+            <td i18n="|Empty manufacturer list@@manufacturer.table.empty">There is no manufacturers</td>
+        }
+    </tbody>
+</table>
+<div>
+    <button (click)="previousPage()" [disabled]="currentPage===0">Previous</button>
+    <span i18n="|Single product page name@@table.page">Page</span>
+    <span>{{currentPage}}</span>
+    <span i18n="|Single page out of X number@@table.of">of</span>
+    <span>{{maxPage}}</span>
+    <button i18n="|Next page button@@table.next" (click)="nextPage()">Next</button>
+</div>
+<a routerLink="/employee" i18n="|Button to previous page@@button.back">Back</a>
+<a routerLink="/employee/manufacturer/add" i18n="|Button to entity creation form@@form.add">Add new</a>
+<div [hidden]="displayInfoPopup">
+    <div>{{popupText}}</div>
+</div>

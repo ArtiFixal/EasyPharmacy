@@ -1,0 +1,14 @@
+<form [formGroup]="manufacturerForm" (ngSubmit)="submitCallback()">
+    @if (model) {
+        <div i18n="@@table.id">ID:</div>
+        <input type="text" formControlName="id">
+    }
+    <div i18n="@@table.name">Name:</div>
+    <input type="text" formControlName="name">
+    @if(model){
+        <button type="submit" i18n="|Button updating entity@@form.edit">Edit</button>
+    }@else {
+        <button type="submit" i18n="|Button adding new entity@@form.add">Add</button>
+    }
+    <a routerLink="/employee/manufacturer" i18n="|Cancel form action ex. edit@@form.cancel">Cancel</a>
+</form>
