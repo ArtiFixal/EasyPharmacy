@@ -38,7 +38,7 @@ public class SpringSecurityConfig {
             .csrf(ServerHttpSecurity.CsrfSpec::disable)
             .addFilterAt(jwtRequestFilter,SecurityWebFiltersOrder.AUTHENTICATION)
             .authorizeExchange((exchange)->{
-                exchange.pathMatchers("/v1/*/login","/v1/client/register")
+                exchange.pathMatchers("/v1/*/login","/v1/clients/register")
                     .permitAll()
                     .anyExchange()
                     .authenticated();

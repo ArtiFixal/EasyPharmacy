@@ -28,7 +28,7 @@ public class JwtRequestFilter extends AuthenticationWebFilter{
     public Mono<Void> filter(ServerWebExchange exchange,WebFilterChain chain){
         // Ignore these endpoints they don't have token yet
         String path=exchange.getRequest().getPath().value();
-        if(path.equals("/client/login")||path.equals("/employee/login")||path.equals("/client/register"))
+        if(path.equals("/v1/clients/login")||path.equals("/v1/employees/login")||path.equals("/v1/clients/register"))
             return chain.filter(exchange);
         return jwtAuthConverter.convert(exchange)
             .flatMap((auth)->{

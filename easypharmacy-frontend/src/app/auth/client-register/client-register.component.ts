@@ -14,6 +14,6 @@ export class ClientRegisterComponent {
     constructor(private authService:AuthService){}
 
     register(registerData:RegisterDTO){
-      this.authService.sendRegisterRequest(registerData,"/v1/client/register")
+      this.authService.sendRegisterRequest(registerData,"/v1/clients/register")
     }
 }
