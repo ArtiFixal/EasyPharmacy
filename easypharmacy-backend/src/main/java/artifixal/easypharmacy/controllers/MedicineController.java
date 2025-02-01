@@ -43,7 +43,7 @@ public class MedicineController{
     }
     
     @GetMapping("/{medicineID}")
-    public Mono<MedicineDTO> getMedicine(Long medicineID){
+    public Mono<MedicineDTO> getMedicine(@PathVariable Long medicineID){
         return medicineService.getEntityDto(medicineID);
     }
     
