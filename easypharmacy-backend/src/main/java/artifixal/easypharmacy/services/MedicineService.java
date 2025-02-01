@@ -81,9 +81,9 @@ public class MedicineService extends BaseService<MedicineRepository,Medicine,Lon
             image=imageService.getEntityByPath(entityData.getImageUrl()).block();
         return new Medicine(null,
             entityData.getName(),
-            entityData.getManufacturer(),
-            entityData.getCategory(),
-            entityData.getForm(),
+            entityData.getManufacturerID(),
+            entityData.getCategoryID(),
+            entityData.getMedicineFormID(),
             image.getId(),
             entityData.getPrice(),
             entityData.isReceiptRequired()

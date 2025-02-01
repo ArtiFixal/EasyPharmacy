@@ -14,18 +14,18 @@ import lombok.Getter;
 public abstract class MedicineCommonDTO extends BaseDTO<Long>{
     
     public String name;
-    private Long manufacturer;
-    private Long category;
-    private Long form;
+    private Long manufacturerID;
+    private Long categoryID;
+    private Long medicineFormID;
     public BigDecimal price;
     private boolean receiptRequired;
 
-    public MedicineCommonDTO(Optional<Long> id,String name,Long manufacturer,Long category,Long form,BigDecimal price,boolean receiptRequired){
+    public MedicineCommonDTO(Optional<Long> id,String name,Long manufacturerID,Long categoryID,Long medicineFormID,BigDecimal price,boolean receiptRequired){
         super(id);
         this.name=name;
-        this.manufacturer=manufacturer;
-        this.category=category;
-        this.form=form;
+        this.manufacturerID=manufacturerID;
+        this.categoryID=categoryID;
+        this.medicineFormID=medicineFormID;
         this.price=price;
         this.receiptRequired=receiptRequired;
     }

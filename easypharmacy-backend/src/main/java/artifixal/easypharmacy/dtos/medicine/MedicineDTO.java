@@ -15,8 +15,8 @@ public class MedicineDTO extends MedicineCommonDTO{
     
     private String imageUrl;
 
-    public MedicineDTO(Optional<Long> id,String name,Long manufacturer,Long category,Long form,BigDecimal price,boolean receiptRequired,String imageUrl){
-        super(id,name,manufacturer,category,form,price,receiptRequired);
+    public MedicineDTO(Optional<Long> id,String name,Long manufacturerID,Long categoryID,Long medicineFormID,BigDecimal price,boolean receiptRequired,String imageUrl){
+        super(id,name,manufacturerID,categoryID,medicineFormID,price,receiptRequired);
         this.imageUrl=imageUrl;
     }
 }

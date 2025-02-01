@@ -15,8 +15,8 @@ public class MedicineCreationDTO extends MedicineCommonDTO{
     
     private FilePart image;
 
-    public MedicineCreationDTO(Optional<Long> id,String name,Long manufacturer,Long category,Long form,BigDecimal price,boolean receiptRequired,FilePart image){
-        super(id,name,manufacturer,category,form,price,receiptRequired);
+    public MedicineCreationDTO(Optional<Long> id,String name,Long manufacturerID,Long categoryID,Long medicineFormID,BigDecimal price,boolean receiptRequired,FilePart image){
+        super(id,name,manufacturerID,categoryID,medicineFormID,price,receiptRequired);
         this.image=image;
     }
 }
