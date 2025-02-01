@@ -6,7 +6,7 @@ import { enviroment } from '../enviroment';
 })
 export class DefaultImagePipe implements PipeTransform {
 
-  transform(value: string|null, ...args: unknown[]): string {
+  transform(value?: string): string {
     if(!value)
       return `${enviroment.frontendUrl}/default.jpg`;
     return value;
