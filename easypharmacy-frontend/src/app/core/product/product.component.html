@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <h5><a routerLink="/product/{{product().id}}">{{product().name}}</a></h5>
+    </div>
+    <div>
+        <div>
+            <img src="{{product().image | defaultImage}}" alt="{{product().name}} image">
+        </div>
+        <div>
+            <span i18n="|@medicine.price">Price:</span>
+            <span>{{product().price}}</span>
+        </div>
+        <button (click)="addToCart()" i18n="|Add to cart button@@cart.add">Add to cart</button>
+    </div>
+</div>

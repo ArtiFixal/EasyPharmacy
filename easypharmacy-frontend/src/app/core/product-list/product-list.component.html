@@ -1,0 +1,15 @@
+<article>
+    <div class="productList">
+        @for (med of medicines; track $index) {
+            <app-product [product]="med"></app-product>
+        }@empty {
+            <div>There is no medicines</div>
+        }
+    </div>
+    <div>
+        <span>Page</span>
+        <span>0</span>
+        <span>of</span>
+        <span>1</span>
+    </div>
+</article>

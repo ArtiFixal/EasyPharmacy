@@ -1,0 +1,30 @@
+<section>
+    <h3>{{product?.name}}</h3>
+    <div>
+        <img src="{{product?.image | defaultImage}}" alt="{{product?.name}} large image">
+    </div>
+    <div>
+        <span i18n="|@@medicine.price">Price:</span>
+        <span>{{product?.price}}</span>
+    </div>
+    <div>
+        <span i18n="|@@manufacturer.name">Manufacturer:</span>
+        <span>{{manufacturer?.name}}</span>
+    </div>
+    <div>
+        <span i18n="|@@category.name">Category:</span>
+        <span>{{category?.name}}</span>
+    </div>
+    <div>
+        <span i18n="|@@medicineForm.name">Medicine form:</span>
+        <span>{{medicineForm?.name}}</span>
+    </div>
+    <div>
+        <span>Prescription required:</span>
+        <span>{{product?.prescriptionRequired | yesNo}}</span>
+    </div>
+    <div>
+        <button i18n="|Add to cart buttton@@cart.add" (click)="addToCart()">Add to cart</button>
+    </div>
+</section>
+
