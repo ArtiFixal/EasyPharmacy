@@ -1,36 +1,47 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ManufacturerDTO } from '../../models/ManufacturerDTO';
-import { RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ManufacturerService } from '../../services/manufacturer.service';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-manufacturer-form',
-  imports: [CommonModule,ReactiveFormsModule,RouterLink],
+  imports: [CommonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './manufacturer-form.component.html',
   styleUrl: './manufacturer-form.component.css'
 })
-export class ManufacturerFormComponent {
+export class ManufacturerFormComponent implements OnInit,OnChanges{
+  @Input() model?:ManufacturerDTO;
 
-  @Input() model:ManufacturerDTO|undefined;
-  @Output() successEvent:EventEmitter<boolean>=new EventEmitter<boolean>();
+  manufacturerForm!: FormGroup
 
-  manufacturerForm: FormGroup
+  constructor(private router:Router,private formBuilder:FormBuilder,private manufacturerService:ManufacturerService){}
 
-  constructor(private formBuilder:FormBuilder,private manufacturerService:ManufacturerService){
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['model'])
     if(this.model){
-      this.manufacturerForm=formBuilder.group({
+      this.manufacturerForm=this.formBuilder.group({
         id:[this.model.id,[Validators.required]],
         name:[this.model.name,[Validators.required]]
       })
     }
-    else{
-      this.manufacturerForm=formBuilder.group({
-        name:['',[Validators.required]]
-      })
-    }
+  }
+
+  ngOnInit(): void {
+    this.manufacturerForm=this.formBuilder.group({
+      name:['',[Validators.required]]
+    })
+  }
+
+  navigateToListPage(action:string,success:boolean){
+    this.router.navigateByUrl("/employee/category",{
+      state:{
+        'action':action,
+        'success':success
+      }
+    })
   }
 
   submitCallback(){
@@ -41,16 +52,21 @@ export class ManufacturerFormComponent {
         this.manufacturerForm.value.id
       );
       let request:Observable<ManufacturerDTO>;
-      if(manufacturerData.id)
+      let action
+      if(manufacturerData.id){
         request=this.manufacturerService.editEntity(manufacturerData);
-      else
+        action="edit"
+      }
+      else{
         request=this.manufacturerService.addEntity(manufacturerData);
+        action="add"
+      }
       let sub=request.subscribe({
         next:response=>{
-          this.successEvent.emit(true)
+          this.navigateToListPage(action,true)
         },
         error: err=> {
-          this.successEvent.emit(false);
+          this.navigateToListPage(action,false)
         },
         complete(){
           sub.unsubscribe()

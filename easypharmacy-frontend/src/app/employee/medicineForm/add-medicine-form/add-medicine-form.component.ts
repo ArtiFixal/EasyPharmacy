@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MedicineFormFormComponent } from "../medicine-form-form/medicine-form-form.component";
 
 @Component({
   standalone:false,

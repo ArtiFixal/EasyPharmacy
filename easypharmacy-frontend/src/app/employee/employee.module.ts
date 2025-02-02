@@ -23,25 +23,27 @@ import { DetailsMedicineComponent } from './medicine/details-medicine/details-me
 import { MedicineFormComponent } from './medicine/medicine-form/medicine-form.component';
 import { YesNoPipe } from '../shared/yes-no.pipe';
 import { DefaultImagePipe } from '../shared/default-image.pipe';
+import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+import { EditMedicineFormComponent } from './medicineForm/edit-medicine-form/edit-medicine-form.component';
 
 export const employeeRoutes: Routes = [
-  // Manufacturer
   {path:"employee", component:EmployeeComponent,},
+  // Manufacturer
   {path:"employee/manufacturer", component:ManufacturerComponent,title:`${enviroment.title} - manufacturers list`},
-  {path:"employee/manufacturer/:page", component:ManufacturerComponent,title:`${enviroment.title} - manufacturers list`},
+  {path:"employee/manufacturer/page/:page", component:ManufacturerComponent,title:`${enviroment.title} - manufacturers list`},
   {path:"employee/manufacturer/add", component:ManufacturerAddComponent,title:`${enviroment.title} - add manufacturer`},
   {path:"employee/manufacturer/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit manufacturer`},
   {path:"employee/manufacturer/details/:id", component:ManufacturerDetailsComponent,title:`${enviroment.title} - manufacturer info`},
   // Category
   {path:"employee/category", component:ListCategoryComponent,title:`${enviroment.title} - categories list`},
-  {path:"employee/category/:page", component:ListCategoryComponent,title:`${enviroment.title} - categories list`},
+  {path:"employee/category/page/:page", component:ListCategoryComponent,title:`${enviroment.title} - categories list`},
   {path:"employee/category/add", component:AddCategoryComponent,title:`${enviroment.title} - add category`},
-  {path:"employee/category/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit category`},
+  {path:"employee/category/edit/:id", component:EditCategoryComponent,title:`${enviroment.title} - edit category`},
   {path:"employee/category/details/:id", component:DetailsCategoryComponent,title:`${enviroment.title} - category info`},
   // MedicineForm
   {path:"employee/medicineForm", component:ListMedicineFormComponent,title:`${enviroment.title} - medicine form list`},
   {path:"employee/medicineForm/add", component:AddMedicineFormComponent,title:`${enviroment.title} - add medicine form`},
-  {path:"employee/medicineForm/edit/:id", component:ManufacturerEditComponent,title:`${enviroment.title} - edit medicine form`},
+  {path:"employee/medicineForm/edit/:id", component:EditMedicineFormComponent,title:`${enviroment.title} - edit medicine form`},
   {path:"employee/medicineForm/details/:id", component:DetailsMedicineFormComponent,title:`${enviroment.title} - medicine form info`},
   // Medicine
   {path:"employee/medicine", component:ListMedicineComponent,title:`${enviroment.title} - medicine list`},
@@ -72,9 +74,11 @@ export const employeeRoutes: Routes = [
     ManufacturerDetailsComponent,
     ListCategoryComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
     DetailsCategoryComponent,
     ListMedicineFormComponent,
     AddMedicineFormComponent,
+    EditMedicineFormComponent,
     DetailsMedicineFormComponent,
     ListMedicineComponent,
     AddMedicineComponent,
@@ -89,9 +93,11 @@ export const employeeRoutes: Routes = [
     ManufacturerDetailsComponent,
     ListCategoryComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
     DetailsCategoryComponent,
     ListMedicineFormComponent,
     AddMedicineFormComponent,
+    EditMedicineFormComponent,
     DetailsMedicineFormComponent,
     ListMedicineComponent,
     AddMedicineComponent,

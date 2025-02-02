@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   standalone:false,
@@ -9,14 +8,4 @@ import { Router } from '@angular/router';
 })
 export class ManufacturerAddComponent {
 
-  constructor(private router:Router){}
-
-  onSubmit(success:boolean){
-    this.router.navigateByUrl("/employee/manufacturer",{
-      state:{
-        'action':'add',
-        'success':success
-      }
-    })
-  }
 }

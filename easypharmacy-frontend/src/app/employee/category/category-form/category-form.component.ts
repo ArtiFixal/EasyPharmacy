@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CategoryService } from '../shared/category.service';
@@ -12,25 +12,26 @@ import { Observable } from 'rxjs';
   templateUrl: './category-form.component.html',
   styleUrl: './category-form.component.css'
 })
-export class CategoryFormComponent implements OnInit{
+export class CategoryFormComponent implements OnInit,OnChanges{
   @Input() model?:CategoryDTO;
   
   categoryForm!: FormGroup
 
   constructor(private formBuilder:FormBuilder,private router:Router,private categoryService:CategoryService){}
   
-  ngOnInit(): void {
-    if (this.model) {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['model']&&this.model) {
       this.categoryForm = this.formBuilder.group({
         id: [this.model.id, [Validators.required]],
         name: [this.model.name, [Validators.required]]
       })
     }
-    else {
-      this.categoryForm = this.formBuilder.group({
-        name: ['', [Validators.required]]
-      })
-    }
+  }
+  
+  ngOnInit(): void {
+    this.categoryForm = this.formBuilder.group({
+      name: ['', [Validators.required]]
+    })
   }
 
   navigateToListPage(action:string,success:boolean){

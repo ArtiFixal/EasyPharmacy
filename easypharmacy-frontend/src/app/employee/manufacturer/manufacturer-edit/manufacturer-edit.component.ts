@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { ManufacturerService } from '../services/manufacturer.service';
 import { ManufacturerDTO } from '../models/ManufacturerDTO';
 import { take } from 'rxjs';
@@ -14,16 +13,7 @@ export class ManufacturerEditComponent {
   
   toEdit!:ManufacturerDTO
 
-  constructor(private router:Router,private manufacturerService:ManufacturerService){}
-
-  onSubmit(success:boolean){
-    this.router.navigateByUrl("/employee/manufacturer",{
-      state:{
-        'action':'edit',
-        'success':success
-      }
-    })
-  }
+  constructor(private manufacturerService:ManufacturerService){}
 
   @Input()
   set id(manufacturerID:number){

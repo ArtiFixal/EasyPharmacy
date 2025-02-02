@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { MedicineFormDTO } from '../models/MedicineFormDTO';
@@ -12,25 +12,26 @@ import { Observable } from 'rxjs';
   templateUrl: './medicine-form-form.component.html',
   styleUrl: './medicine-form-form.component.css',
 })
-export class MedicineFormFormComponent implements OnInit{
+export class MedicineFormFormComponent implements OnInit,OnChanges{
   @Input() model?:MedicineFormDTO;
 
   medicineFormForm!: FormGroup;
 
   constructor(private formBuilder:FormBuilder,private router:Router,private medicineFormService:MedicineFormService){}
 
-  ngOnInit(): void {
-    if (this.model) {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['model']&&this.model) {
       this.medicineFormForm = this.formBuilder.group({
         id: [this.model.id, [Validators.required]],
         name: [this.model.name, [Validators.required]]
       })
     }
-    else {
-      this.medicineFormForm = this.formBuilder.group({
-        name: ['', [Validators.required]]
-      })
-    }
+  }
+
+  ngOnInit(): void {
+    this.medicineFormForm = this.formBuilder.group({
+      name: ['', [Validators.required]]
+    })
   }
 
   navigateToListPage(action:string,success:boolean){
