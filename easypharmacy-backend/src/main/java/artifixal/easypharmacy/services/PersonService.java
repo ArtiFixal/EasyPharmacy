@@ -44,6 +44,11 @@ public abstract class PersonService<ET extends Person,DTO extends PersonDTO> ext
             .switchIfEmpty(Mono.error(new EntityNotFoundException(entityName,email)));
     }
     
+    public Mono<DTO> getUserDtoByEmail(String email){
+        return getUserEntityByEmail(email)
+            .map((user)->convertEntityToDto(user));
+    }
+    
     protected Mono<Boolean> verifyLogin(AuthCredentialsDTO userAuth){
         return repo.findUserByEmail(userAuth.getEmail())
             .switchIfEmpty(Mono.error(new AuthenticationException("Failed to authenticate user")))

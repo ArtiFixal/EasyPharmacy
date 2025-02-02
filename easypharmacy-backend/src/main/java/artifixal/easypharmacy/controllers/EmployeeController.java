@@ -2,15 +2,18 @@ package artifixal.easypharmacy.controllers;
 
 import artifixal.easypharmacy.auth.AuthCredentialsDTO;
 import artifixal.easypharmacy.auth.JWTAuthResponseDTO;
+import artifixal.easypharmacy.auth.jwt.JwtService;
 import artifixal.easypharmacy.dtos.EmployeeDTO;
 import artifixal.easypharmacy.entities.Employee;
 import artifixal.easypharmacy.services.EmployeeService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -27,11 +30,19 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class EmployeeController {
     
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
+    private final JwtService JwtService;
     
     @PostMapping("/login")
     public Mono<ResponseEntity<JWTAuthResponseDTO>> login(@RequestBody AuthCredentialsDTO userAuth){
         return employeeService.login(userAuth);
+    }
+    
+    @GetMapping("/who")
+    public Mono<EmployeeDTO> whoAmI(@RequestHeader(HttpHeaders.AUTHORIZATION) String auth){
+        return Mono.just(auth.substring(7))
+            .map((token)->JwtService.getEmail(token))
+            .flatMap((email)->employeeService.getUserDtoByEmail(email));
     }
     
     @PostMapping("/register")

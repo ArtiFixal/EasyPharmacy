@@ -7,6 +7,7 @@ import { jwtDecode } from 'jwt-decode';
 import { JwtTokenDTO } from '../models/JwtTokenDTO';
 import { RegisterDTO } from '../models/RegisterDTO';
 import { Router } from '@angular/router';
+import { PersonDTO } from '../../core/models/PersonDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,10 @@ export class AuthService {
         }
       }
     })
+  }
+
+  public whoAmI(resourceName:string): Observable<PersonDTO>{
+    return this.http.get<PersonDTO>(`${enviroment.apiUrl}/${enviroment.currentApiVer}/${resourceName}/who`);
   }
 
   public sendRegisterRequest(registerData:RegisterDTO,loginEndpoint:string){
