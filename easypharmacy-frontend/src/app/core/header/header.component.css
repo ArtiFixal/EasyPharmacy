@@ -1,0 +1,7 @@
+#nav-container{
+    display: flex;
+    justify-content: space-between;
+}
+#nav-user-container{
+    display: flex;
+}

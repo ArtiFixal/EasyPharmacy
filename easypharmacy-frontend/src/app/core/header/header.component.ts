@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../auth/services/auth.service';
+import { CartService } from '../services/cart.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,9 +17,14 @@ export class HeaderComponent implements OnInit,OnDestroy{
   logged: boolean=false;
   currentString: string=$localize`:Button name|@@header.login:login`;
   currentAction: string="/login";
+  cartCount:number=0;
+  private cartCountSub:Subscription;
   private loginSub:Subscription;
 
-  constructor(private authService:AuthService){
+  constructor(private authService:AuthService,private cartService:CartService){
+    this.cartCountSub=cartService.getCartItemsCount().subscribe({
+      next:count=>this.cartCount=count
+    });
     this.loginSub=authService.isUserLoggedIn().subscribe({
       next:status=>{
         this.logged=status
@@ -28,6 +34,7 @@ export class HeaderComponent implements OnInit,OnDestroy{
   }
 
   ngOnDestroy(): void {
+    this.cartCountSub.unsubscribe();
     this.loginSub.unsubscribe();
   }
 

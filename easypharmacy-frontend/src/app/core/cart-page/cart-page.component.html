@@ -1,0 +1,37 @@
+<h2 i18n="|Cart page name@@cart.name">Cart</h2>
+<table>
+    <thead>
+        <td i18n="|@@table.id">ID</td>
+        <td i18n="|@@table.name">Image</td>
+        <td i18n="|@@table.name">Name</td>
+        <td i18n="|@@medicine.price">Price</td>
+        <td i18n="|@@cart.quantity">Quantity</td>
+        <td i18n="|@@table.options">Options</td>
+    </thead>
+    <tbody>
+        @for (item of cartItems; track $index) {
+            <tr>
+                <td>{{item.id}}</td>
+                <td>
+                    <img src="{{item.imagePath | defaultImage}}" alt="{{item.name}} cart image">
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>
+                    <div (click)="decProductQuantity(item.id)">-</div>
+                    <div (click)="incProductQuantity(item.id)">+</div>
+                </td>
+            </tr>
+        }@empty {
+            <td i18n="|Empty cart message@@cart.empty">Cart is empty</td>
+        }
+    </tbody>
+    <div>
+        <span>Total:</span>
+        <span>{{totalAmount}}</span>
+    </div>
+    <div>
+        <a i18n="|Checkout button name@@cart.checkout" routerLink="/checkout">Checkout</a>
+    </div>
+</table>

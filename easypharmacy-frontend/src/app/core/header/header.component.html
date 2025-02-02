@@ -1,8 +1,19 @@
-<div>
-    <a routerLink="/" i18n="|Home page name@@header.homepage">Home</a>
-    <a routerLink="/cart" routerLinkActive="active" i18n="|Cart button@@header.cart">Cart</a>
-    <a [routerLink]="currentAction">{{currentString}}</a>
-    @if (!logged) {
-        <a routerLink="/register" i18n="|Register button name@@header.register">Register</a>
-    }
-</div>
+<header>
+    <nav id="nav-container">
+        <div>
+            <a routerLink="/" i18n="|Home page name@@header.homepage">Home</a>
+        </div>
+        <div id="nav-user-container">
+            <div>
+                <a routerLink="/cart" i18n="|Cart button@@header.cart">Cart</a>
+                <div [hidden]="cartCount===0">{{cartCount}}</div>
+            </div>
+            <div>
+                <a [routerLink]="currentAction">{{currentString}}</a>
+                @if (!logged) {
+                    <a routerLink="/register" i18n="|Register button name@@header.register">Register</a>
+                }
+            </div>
+        </div>
+    </nav>
+</header>
