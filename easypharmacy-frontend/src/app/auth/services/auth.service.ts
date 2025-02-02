@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginDTO } from '../models/LoginDTO';
 import { HttpClient } from '@angular/common/http';
 import { enviroment } from '../../enviroment';
-import { BehaviorSubject, take } from 'rxjs';
+import { BehaviorSubject, Observable, take } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
 import { JwtTokenDTO } from '../models/JwtTokenDTO';
 import { RegisterDTO } from '../models/RegisterDTO';
@@ -28,6 +28,10 @@ export class AuthService {
 
   protected setToken(token: string){
     localStorage.setItem(this.TOKEN_KEY,token)
+  }
+
+  public isUserLoggedIn():Observable<boolean>{
+    return this.loggedIn.asObservable();
   }
 
   /**
