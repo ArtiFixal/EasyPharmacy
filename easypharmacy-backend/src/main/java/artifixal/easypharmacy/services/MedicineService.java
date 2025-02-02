@@ -1,16 +1,20 @@
 package artifixal.easypharmacy.services;
 
 import artifixal.easypharmacy.dtos.Page;
+import artifixal.easypharmacy.dtos.medicine.MedicineCreationDTO;
 import artifixal.easypharmacy.dtos.medicine.MedicineDTO;
 import artifixal.easypharmacy.entities.Image;
 import artifixal.easypharmacy.entities.Medicine;
 import artifixal.easypharmacy.repositories.MedicineRepository;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 /**
  * Service related to medicines.
@@ -47,11 +51,33 @@ public class MedicineService extends BaseService<MedicineRepository,Medicine,Lon
                     row.get("image",String.class));
             }).all();
     }
+    
+    public Mono<Medicine> addMedicineWithImage(MedicineCreationDTO medicine){
+        return repo.save(convertCreationDtoToEntity(medicine,medicine.getImageID().orElse(null)));
+    }
+    
+    public Mono<Medicine> addMedicineWithImage(MedicineCreationDTO medicine,MultipartFile image) throws IOException{
+        return imageService.addEntity(image)
+            .map((imageEntity)->imageEntity.getId())
+            .flatMap((imageID)->repo.save(convertCreationDtoToEntity(medicine,imageID)));
+    }
 
     @Override
     protected void updateEntityValues(MedicineDTO entityNewData,Medicine entity){
         entity.setName(entityNewData.getName());
         entity.setPrice(entityNewData.getPrice());
+    }
+    
+    protected Medicine convertCreationDtoToEntity(MedicineCreationDTO entityData,Long imageID){
+        return new Medicine(null,
+            entityData.getName(),
+            entityData.getManufacturerID(),
+            entityData.getCategoryID(),
+            entityData.getMedicineFormID(),
+            imageID,
+            entityData.getPrice(),
+            entityData.isReceiptRequired()
+        );
     }
 
     @Override

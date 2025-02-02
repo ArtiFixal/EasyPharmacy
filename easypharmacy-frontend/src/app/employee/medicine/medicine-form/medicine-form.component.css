@@ -1,0 +1,6 @@
+#imageChange{
+    display: flex;
+}
+#imageChange div:first-child{
+    margin-right: 20px;
+}

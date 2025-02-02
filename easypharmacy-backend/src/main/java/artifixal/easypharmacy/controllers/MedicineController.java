@@ -2,8 +2,10 @@ package artifixal.easypharmacy.controllers;
 
 import artifixal.easypharmacy.dtos.medicine.MedicineDTO;
 import artifixal.easypharmacy.dtos.Page;
+import artifixal.easypharmacy.dtos.medicine.MedicineCreationDTO;
 import artifixal.easypharmacy.entities.Medicine;
 import artifixal.easypharmacy.services.MedicineService;
+import java.io.IOException;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +30,8 @@ public class MedicineController{
     private final MedicineService medicineService;
     
     @PostMapping("/add")
-    public Mono<Medicine> addMedicine(@RequestBody MedicineDTO medicine){
-        return medicineService.addEntity(medicine);
+    public Mono<Medicine> addMedicine(@RequestBody MedicineCreationDTO medicine) throws IOException{
+        return medicineService.addMedicineWithImage(medicine);
     }
     
     @GetMapping("/page/{phrase}")

@@ -1,4 +1,4 @@
-<form [formGroup]="medicineForm" (ngSubmit)="submitCallback()">
+<form [formGroup]="medicineForm" enctype="multipart/form-data" (ngSubmit)="submitCallback()">
     @if (model) {
         <div i18n="@@table.id">ID:</div>
         <input type="text" formControlName="id">
@@ -6,8 +6,19 @@
     <div i18n="@@table.name">Name:</div>
     <input type="text" formControlName="name">
     <div i18n="@@table.image">Image:</div>
-    <div></div>
-    <input type="file" formControlName="image">
+    <div id="imageChange">
+        @if (model) {
+            <div>
+                <div>Current:</div>
+                <img src="{{model.image | defaultImage}}" alt="{{model.name}} current image">
+            </div>
+        }
+        <div>
+            <div>New:</div>
+            <img src="{{newImageSrc}}" alt="New image">
+        </div>
+    </div>
+    <input type="file" formControlName="image" (change)="onImageSelect($event)" accept="image/*">
     <div i18n="@@table.image">Manufacturer:</div>
     <select-form [control]="manufacturerControl" [options]="manufacturers"></select-form>
     <div i18n="@@table.image">Category:</div>
