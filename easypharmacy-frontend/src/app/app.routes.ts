@@ -6,6 +6,7 @@ import { RegisterSuccessComponent } from './auth/register-success/register-succe
 import { HomeComponent } from './core/home/home.component';
 import { ProductPageComponent } from './core/product-page/product-page.component';
 import { CartPageComponent } from './core/cart-page/cart-page.component';
+import { CheckoutPageComponent } from './core/checkout-page/checkout-page.component';
 
 export const routes: Routes = [
     {path:"",component:HomeComponent,title:"Easypharmacy"},
@@ -15,4 +16,5 @@ export const routes: Routes = [
     {path:"register/success",component:RegisterSuccessComponent,title:"Register success"},
     {path:"product/:id",component:ProductPageComponent},
     {path:"cart",component:CartPageComponent,title:"Cart"},
+    {path:"checkout",component:CheckoutPageComponent,title:"Checkout"},
 ];

@@ -1,0 +1,22 @@
+<h2 i18n="|Checkout page name@@checkout.name">Checkout</h2>
+<div>
+    <form [formGroup]="addressForm">
+        <div>
+            <label for="street" i18n="|Street label@@street.name">Street:</label>
+            <input type="text" formControlName="street" id="street">
+        </div>
+        <div>
+            <label for="postalCode" i18n="|Postal code label@@postCode.name">Postal code:</label>
+            <input type="text" formControlName="postalCode" id="postalCode" maxlength="6">
+        </div>
+        <div>
+            <label for="city" i18n="|City label@@city.name">City:</label>
+            <input type="text" formControlName="city" id="city">
+        </div>
+        <div>
+            <span i18n="|Total amount to pay label@@checkout.total">Total to pay:</span>
+            <span>{{totalAmount}}</span>
+        </div>
+        <button type="submit" [disabled]="cartItemCount===0" (click)="placeOrder()" i18n="|Place order button@@checkout.placeOrder">Place order</button>
+    </form>
+</div>
